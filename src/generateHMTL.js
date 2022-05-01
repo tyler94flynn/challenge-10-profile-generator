@@ -1,3 +1,34 @@
+
+
+
+//todo: make functions to populate card data for each employee type 
+
+
+
+
+
+
+//creates cards based on role for each item in the array of employees
+const generateCard = (data) => {
+    var htmlAddress = "";
+
+    data.forEach((item) => {
+        if (item.getRole() === "Manager") {
+            var string = generateManager(item);
+            htmlAddress += string;
+        } else if (item.getRole() === "Engineer") {
+            var string = generateEngineer(item);
+            htmlAddress += string;
+        } else if (item.getRole() === "Intern") {
+            var string = generateIntern(item);
+            htmlAddress += string;
+        }
+    });
+    return htmlAddress;
+};
+
+
+//generates the page using generateCard function
 const generateHTML = (data) => {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -16,6 +47,10 @@ const generateHTML = (data) => {
                     <h1 class="display-4 text-center">Team Details</h1>
                 </div>
             </div>
+            
+            ${generateCard(data)}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
         </body>
-        </html>`;
+    </html>`;
 };
