@@ -75,7 +75,7 @@ const askEngineer = () => {
             },
         ])
         .then((data) => {
-            teamMembers.push(
+            employees.push(
                 new Engineer(data.name, data.id, data.email, data.GitHub)
             );
             if (data.employeeList === "Engineer") {
@@ -83,7 +83,7 @@ const askEngineer = () => {
             } else if (data.employeeList === "Intern") {
                 askIntern();
             } else {
-                let data = generateHTML(teamMembers);
+                let data = generateHTML(employees);
                 fs.writeFileSync("./dist/employees.html", data, "utf-8");
             }
         });
@@ -95,31 +95,31 @@ const askIntern = () => {
         .prompt([{
                 type: "input",
                 name: "name",
-                message: "What id your intern's name?",
+                message: "PLease input the intern's name.",
             },
             {
                 type: "input",
                 name: "id",
-                message: "What is your intern's id?",
+                message: "Please input the intern's ID.",
             },
             {
                 type: "input",
                 name: "email",
-                message: "What is your intern's email?",
+                message: "Please input the intern's email address.",
             },
             {
                 type: "input",
                 name: "school",
-                message: "What is your intern's school?",
+                message: "Please input the intern's school.",
             },
             {
                 type: "list",
                 name: "employeeList",
-                message: "Which type of team member would you like to add?",
+                message: "Select the role of the team member you'd like to add next. If you are done, select \"I'm done.\"",
                 choices: ["Engineer", "Intern", "I'm done."],
             },
         ]).then((data) => {
-            teamMembers.push(
+            employees.push(
                 new Intern(data.name, data.id, data.email, data.school)
             );
             if (data.employeeList === "Engineer") {
@@ -127,7 +127,7 @@ const askIntern = () => {
             } else if (data.employeeList === "Intern") {
                 askIntern();
             } else {
-                let data = generateHTML(teamMembers);
+                let data = generateHTML(employees);
                 fs.writeFileSync("employees.html", data, "utf-8");
             }
         });

@@ -1,6 +1,3 @@
-
-
-
 //fills out card information for each role based on the user input in index.js
 const generateManager = (data) => {
     return ` <div class='container'>
@@ -140,3 +137,5 @@ const generateHTML = (data) => {
         </body>
     </html>`;
 };
+
+module.exports = generateHTML;

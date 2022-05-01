@@ -1,0 +1,26 @@
+{
+  "name": "challenge-10-profile-generator",
+  "version": "1.0.0",
+  "description": "This JavaScript application uses the Node.js library \"inquirer\" to generate a webpage showing team member descriptions for a user given appropriate inputs through the index.js wizard.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyler94flynn/challenge-10-profile-generator.git"
+  },
+  "author": "Tyler Flynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyler94flynn/challenge-10-profile-generator/issues"
+  },
+  "homepage": "https://github.com/tyler94flynn/challenge-10-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
