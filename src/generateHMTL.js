@@ -1,12 +1,98 @@
 
 
 
-//todo: make functions to populate card data for each employee type 
+//fills out card information for each role based on the user input in index.js
+const generateManager = (data) => {
+    return ` <div class='container'>
+                <ul class="card"> 
+                    <li>
+                        <div class="col-md-2">
+                            <div class="card cardbody">
+                                <div class="card-header font: text-white" style="background: blue">
+                                    ${data.name}
+                                    ${data.getRole()}
+                                </div>
 
+                                <div class="card-body">
+                                    <form role="form">			
+                                        <div class="form-group">
+                                            <p> <b>Id:</b> ${data.id}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>Email:</b> <a href="mailto:${data.email}">${data.email}</a></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>Office Number:</b> ${data.officeNumber} </p>				
+                                        </div>				
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+};
 
+const generateEngineer = (data) => {
+    return ` <div class='container'>
+                <ul class="card"> 
+                    <li>
+                        <div class="col-md-2">
+                            <div class="card cardbody">
+                                <div class="card-header font: text-white" style="background: blue">
+                                    ${data.name}
+                                    ${data.getRole()}
+                                </div>
 
+                                <div class="card-body">
+                                    <form role="form">			
+                                        <div class="form-group">
+                                            <p> <b>Id:</b> ${data.id}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>Email:</b> <a href="mailto:${data.email}">${data.email}</a></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>GitHub:</b> <a href="https://github.com/${data.gitHub}">${data.gitHub}</a></p>
+                                        </div>				
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+};
 
-
+const generateIntern = (data) => {
+    return ` <div class='container'>
+                <ul class="card"> 
+                    <li>
+                        <div class="col-md-2">
+                            <div class="card cardbody">
+                                <div class="card-header font: text-white" style="background: blue">
+                                    ${data.name}
+                                    ${data.getRole()}
+                                </div>
+                                <div class="card-body">
+                                    <form role="form">			
+                                        <div class="form-group">
+                                            <p> <b>Id:</b> ${data.id}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>Email:</b> <a href="mailto:${data.email}">${data.email}</a></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> <b>School:</b> ${data.school}</p>
+                                        </div>				
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+};
 
 //creates cards based on role for each item in the array of employees
 const generateCard = (data) => {
