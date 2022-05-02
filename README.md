@@ -29,7 +29,7 @@
   Tyler Flynn
 
   ## Tests
-  There are built-in tests in the "tests" folder for Jest.
+  Navigate to the ___tests___ folder using 'cd', and use the "npm test" command to run all tests.
 
   ## Questions
   N/A
