@@ -129,7 +129,7 @@ const askIntern = () => {
                 askIntern();
             } else {
                 let data = generateHTML(employees);
-                fs.writeFileSync("employees.html", data, "utf-8");
+                fs.writeFileSync("./dist/employees.html", data, "utf-8");
                 console.log("Please see your completed employees.html file in the /dist folder.");
             }
         });
@@ -146,7 +146,6 @@ const init = () => {
         } else if (data.employeeList === "Intern") {
             askIntern();
         } else {
-            //end function here and generateHTML
             var data = generateHTML(employees);
             fs.writeFileSync("./dist/employees.html", data, "utf-8");
             console.log("Please see your completed employees.html file in the /dist folder.");
