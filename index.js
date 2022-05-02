@@ -85,6 +85,7 @@ const askEngineer = () => {
             } else {
                 let data = generateHTML(employees);
                 fs.writeFileSync("./dist/employees.html", data, "utf-8");
+                console.log("Please see your completed employees.html file in the /dist folder.");
             }
         });
 };
@@ -129,6 +130,7 @@ const askIntern = () => {
             } else {
                 let data = generateHTML(employees);
                 fs.writeFileSync("employees.html", data, "utf-8");
+                console.log("Please see your completed employees.html file in the /dist folder.");
             }
         });
 };
@@ -147,11 +149,12 @@ const init = () => {
             //end function here and generateHTML
             var data = generateHTML(employees);
             fs.writeFileSync("./dist/employees.html", data, "utf-8");
+            console.log("Please see your completed employees.html file in the /dist folder.");
         }
     });
 };
 
-//runs wizard
+//run wizard
 init();
 
 
